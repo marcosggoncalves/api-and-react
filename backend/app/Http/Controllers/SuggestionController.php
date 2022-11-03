@@ -12,7 +12,10 @@ class SuggestionController extends Controller
 {
     public function index($suggestion)
     {
-        return Suggestion::where('suggestion', 'like', "%{$suggestion}%")->get();
+        return Suggestion::where('suggestion', 'like', "%{$suggestion}%")
+        ->orderBy('suggestion','asc')
+        ->limit(3)
+        ->get();
     }
 
     public function store(Request $request)
