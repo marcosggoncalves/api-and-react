@@ -3,6 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import ISuggestion from "../../types/suggestion.type";
 import SuggestionsService from "../../services/suggestions.service";
 import React, { useEffect } from "react";
+
 import "./styles.css";
 
 export default function App() {
@@ -35,8 +36,9 @@ export default function App() {
   async function searchForWords(value: string) {
     setSearch(value);
 
-    if (!value || value.length <= 0)
+    if (!value || value.length <= 0) {
       return updateDateSearch('none', []);
+    }
 
     let suggestionsGET: any = await SuggestionsService.findSuggestion(value);
 
@@ -52,8 +54,7 @@ export default function App() {
       history = recentSearch;
 
     if (latestPosition === 0 && recentSearch.length < 5) {
-      setRecentSearch(value => [...value, newSuggestion])
-      return;
+      return setRecentSearch(value => [...value, newSuggestion]);
     }
 
     history[latestPosition] = newSuggestion;
