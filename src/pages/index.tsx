@@ -1,8 +1,9 @@
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ISuggestion from "../types/suggestion.type";
 import SuggestionsService from "../services/suggestions.service";
-import React, { useEffect } from "react";
+import ISuggestion from "../types/suggestion.type";
+import ListSuggestion from "../components/list.suggestion";
 
 export default function Index() {
   let [suggestions, setSuggestions] = React.useState<Array<ISuggestion>>([]),
@@ -88,26 +89,19 @@ export default function Index() {
             onKeyDown={addHistoryEnter}
           />
         </div>
-        <div className="input-filter-result">
-          <ul>
-            {
-              suggestions.map((result: ISuggestion, index: number) => {
-                return <li onClick={() => addHistory(result.suggestion)} key={index}>{result.suggestion}</li>;
-              })
-            }
-          </ul>
-        </div>
+        <ListSuggestion
+          class="input-filter-result"
+          click={addHistory}
+          items={suggestions}
+        />
       </div>
-      <div className="recent-researches">
-        <h3>Recently searched</h3>
-        <ul>
-          {
-            recentSearch.map((result: ISuggestion, index: number) => {
-              return <li key={index}> <FontAwesomeIcon icon={faSearch} className="recent-researches-icon" />{result.suggestion}</li>
-            })
-          }
-        </ul>
-      </div>
+      <ListSuggestion
+        class="recent-researches"
+        title="Recently searched"
+        icon={<FontAwesomeIcon icon={faSearch} className="recent-researches-icon" />}
+        items={recentSearch}
+        click={() => { }}
+      />
     </div>
   );
 }

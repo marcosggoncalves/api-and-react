@@ -1,5 +1,5 @@
-import http from "../utils/http";
 import ISuggestion from "../types/suggestion.type";
+import http from "../utils/http";
 
 class SuggestionsService {
     async findSuggestion(suggestion: string) {
