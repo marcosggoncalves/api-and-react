@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "ceab1b7e-f38f-4883-803d-f24297ccb985",
+		"name": "API Suggestions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8527133"
+	},
+	"item": [
+		{
+			"name": "Trazer sugestões",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/suggestions/dog",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"suggestions",
+						"dog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gravar nova sugestão",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"suggestion\":\"how to train dogs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/suggestion",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"suggestion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
