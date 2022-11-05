@@ -1,12 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ISuggestion from "../../types/suggestion.type";
-import SuggestionsService from "../../services/suggestions.service";
+import ISuggestion from "../types/suggestion.type";
+import SuggestionsService from "../services/suggestions.service";
 import React, { useEffect } from "react";
 
-import "./styles.css";
-
-export default function App() {
+export default function Index() {
   let [suggestions, setSuggestions] = React.useState<Array<ISuggestion>>([]),
     [recentSearch, setRecentSearch] = React.useState<Array<ISuggestion>>([]),
     [search, setSearch] = React.useState<string>(''),
@@ -77,7 +75,7 @@ export default function App() {
   return (
     <div className="display">
       <div className="logo">
-        <img src="logo.png" alt="Finder" />
+        <img src="img/logo.png" alt="Finder" />
       </div>
       <div className="input">
         <div className="input-filter">
