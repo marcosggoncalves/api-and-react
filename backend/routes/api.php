@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/suggestions/{suggestion}', [SuggestionController::class, 'index']);
+Route::get('/suggestions/{suggestion}', [SuggestionController::class, 'find']);
 Route::post('/suggestion', [SuggestionController::class, 'store']);

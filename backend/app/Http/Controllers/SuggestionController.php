@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class SuggestionController extends Controller
 {
-    public function index($suggestion)
+    public function find($suggestion)
     {
         return Suggestion::where('suggestion', 'like', "%{$suggestion}%")
         ->orderBy('suggestion','asc')

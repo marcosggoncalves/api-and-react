@@ -1,0 +1,142 @@
+/* Feel free change any of these styles. */
+/* The font imported below is the same used in the Figma mockup. */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-input: #67717E;
+  --color-input-border: #9BA4B0;
+  --background-input-focus: #10334C;
+  --border-input-focus: #175582;
+  --color-input-font: #ffffff;
+  --font-placeholder-size: 18px;
+  --background: #2d3239;
+  --tamanho-display: 420px;
+  --tamanho-display-media: 100%;
+}
+
+html {
+  background: var(--background);
+  color: #f9fafb;
+  font-family: "Cabin", sans-serif;
+}
+
+.display {
+  width: var(--tamanho-display-media);
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.logo {
+  text-align: center;
+  margin-top: 103px;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 189px;
+  height: 60px;
+}
+
+.input {
+  position: relative;
+}
+
+.input-filter input {
+  width: 100%;
+  height: 57px;
+  border-radius: 10px;
+  background: var(--color-input);
+  border-color: 3px solid var(--color-input-border);
+  color: var(--color-input-font);
+  padding: 0px 20px;
+  font-size: 18px;
+}
+
+.input-filter input::placeholder {
+  color: var(--color-input-font);
+  font-size: var(--font-placeholder-size);
+}
+
+.input-filter input:focus {
+  outline: none;
+  background-color: var(--background-input-focus);
+  border: 3px solid var(--border-input-focus);
+  transition: .2s;
+}
+
+.input-filter-focus:focus {
+  border-radius: 10px 10px 0 0;
+}
+
+.input-filter-result {
+  z-index: 1;
+  width: 100%;
+  display: none;
+  position: absolute;
+  background-color: var(--background-input-focus);
+  border: 3px solid var(--border-input-focus);
+  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
+  border-top: inherit;
+}
+
+.input-filter-icon {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+}
+
+.input-filter-result ul {
+  padding: 20px 20px;
+}
+
+.input-filter-result ul li {
+  font-size: 18px;
+}
+
+.recent-researches {
+  margin-top: 60px;
+}
+
+.recent-researches-icon {
+  padding-right: 12px;
+  display: flex;
+}
+
+.recent-researches h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  font-size: 14px;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 720px) {
+  .display {
+    width: var(--tamanho-display);
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  .recent-researches-icon {
+    display: none;
+    padding-right: unset
+  }
+}

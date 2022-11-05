@@ -1,7 +1,7 @@
 {
   "include": [
     "./src/**/*"
-  ],
+, "public/js/input.js", "public/js/input.js"  ],
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,
